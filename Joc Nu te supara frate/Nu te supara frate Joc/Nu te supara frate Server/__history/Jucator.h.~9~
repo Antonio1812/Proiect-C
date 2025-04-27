@@ -1,0 +1,23 @@
+﻿#ifndef JUCATOR_H
+#define JUCATOR_H
+
+#include <System.UITypes.hpp> // Pentru TColor
+#include <vector>             // Pentru std::vector
+#include <Vcl.ExtCtrls.hpp>   // Pentru TShape
+
+class Jucator {
+private:
+    TColor culoare;                 // Culoarea jucătorului
+    std::vector<TShape*> tabla;     // Referința la tabla de joc
+    int pozitieStart;               // Indexul poziției de start
+    std::vector<int> pioni;         // Pozițiile pioniilor
+
+public:
+    Jucator(TColor culoare, const std::vector<TShape*>& tabla, int pozitieStart);
+    bool poateScoatePion() const;
+    void scoatePion();
+    bool mutaPion(int pionIndex, int numarZar);
+};
+
+#endif
+

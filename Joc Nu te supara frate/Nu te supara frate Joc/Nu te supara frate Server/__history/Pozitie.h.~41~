@@ -1,0 +1,25 @@
+﻿#ifndef PozitieH
+#define PozitieH
+#include <vcl.h>
+#include "Zar.h"
+
+class Pozitie {
+private:
+    TLabel* labels[40]; // Vector pentru labeluri
+	String labelTextInitial[40];
+    TShape* pozitii[40];
+	int pozitieCurenta;
+	Zar zar;
+public:
+void adaugaLabel(TLabel* label, int index);
+TLabel* getLabel(int index);
+void actualizeazaLabel(int pozitieVechi, int pozitieNou, String pionText);
+	Pozitie();
+	void adaugaPozitie(TShape* pozitie, int index);
+	TShape* getPozitie(int index);
+	int getZar();
+    int muta(int pozitieInitiala, int valoareZar);
+};
+
+#endif
+

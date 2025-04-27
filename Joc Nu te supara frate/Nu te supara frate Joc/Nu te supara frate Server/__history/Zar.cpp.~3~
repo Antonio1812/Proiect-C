@@ -1,0 +1,17 @@
+#include "Zar.h"
+#include <cstdlib>
+#include <ctime>
+
+Zar::Zar(){
+valoare=0;
+}
+
+int Zar::arunca(){
+valoare=(rand()%6)+1;
+return valoare;
+}
+
+int Zar::getValoare() const{
+    return valoare;
+}
+

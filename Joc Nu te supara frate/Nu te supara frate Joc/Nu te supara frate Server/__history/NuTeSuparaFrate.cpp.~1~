@@ -1,0 +1,16 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "NuTeSuparaFrate.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TNuTeSuparaFrate *NuTeSuparaFrate;
+//---------------------------------------------------------------------------
+__fastcall TNuTeSuparaFrate::TNuTeSuparaFrate(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------

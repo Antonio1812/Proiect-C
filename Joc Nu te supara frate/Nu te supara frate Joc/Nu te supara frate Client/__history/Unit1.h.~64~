@@ -1,0 +1,212 @@
+#ifndef Unit1H
+#define Unit1H
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Graphics.hpp>
+#include "Zar.h"
+#include "Pozitie.h"
+#include <System.Win.ScktComp.hpp>
+
+class TNuTeSuparaFrate : public TForm
+{
+__published:
+	TShape *Pozitia20;
+	TShape *Pozitia10;
+	TShape *Pozitia40;
+	TShape *Pozitia30;
+	TShape *FinishGalben1;
+	TShape *FinishGalben2;
+	TShape *FinishGalben3;
+	TShape *FinishGalben4;
+	TShape *FinishVerde1;
+	TShape *FinishVerde2;
+	TShape *FinishVerde3;
+	TShape *FinishVerde4;
+	TShape *FinishRosu1;
+	TShape *FinishRosu2;
+	TShape *FinishRosu3;
+	TShape *FinishRosu4;
+	TShape *FinishAlbastru1;
+	TShape *FinishAlbastru2;
+	TShape *FinishAlbastru3;
+	TShape *FinishAlbastru4;
+	TShape *Pozitia5;
+	TShape *Pozitia6;
+	TShape *Pozitia7;
+	TShape *Pozitia8;
+	TShape *Pozitia9;
+	TShape *Pozitia15;
+	TShape *Pozitia14;
+	TShape *Pozitia13;
+	TShape *Pozitia12;
+	TShape *Pozitia11;
+	TShape *Pozitia19;
+	TShape *Pozitia18;
+	TShape *Pozitia17;
+	TShape *Pozitia16;
+	TShape *Pozitia21;
+	TShape *Pozitia22;
+	TShape *Pozitia23;
+	TShape *Pozitia24;
+	TShape *Pozitia29;
+	TShape *Pozitia28;
+	TShape *Pozitia27;
+	TShape *Pozitia26;
+	TShape *Pozitia25;
+	TShape *Pozitia31;
+	TShape *Pozitia32;
+	TShape *Pozitia33;
+	TShape *Pozitia34;
+	TShape *Pozitia35;
+	TShape *Pozitia39;
+	TShape *Pozitia38;
+	TShape *Pozitia37;
+	TShape *Pozitia36;
+	TShape *Pozitia1;
+	TShape *Pozitia2;
+	TShape *Pozitia3;
+	TShape *Pozitia4;
+	TShape *PionGalben4;
+	TShape *PionGalben3;
+	TShape *PionGalben1;
+	TShape *PionGalben2;
+	TShape *PionVerde4;
+	TShape *PionVerde1;
+	TShape *PionVerde2;
+	TShape *PionVerde3;
+	TShape *PionRosu3;
+	TShape *PionRosu4;
+	TShape *PionRosu1;
+	TShape *PionRosu2;
+	TShape *PionAlbastru3;
+	TShape *PionAlbastru4;
+	TShape *PionAlbastru1;
+	TShape *PionAlbastru2;
+	TButton *casaButton;
+	TButton *mutaButton;
+	TButton *zarButton;
+	TShape *Shape1;
+	TShape *Shape2;
+	TShape *Shape3;
+	TShape *Shape4;
+	TLabel *Label1;
+	TLabel *Label2;
+	TLabel *Label3;
+	TLabel *Label4;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
+	TLabel *Label8;
+	TLabel *Label9;
+	TLabel *Label10;
+	TLabel *Label11;
+	TLabel *Label12;
+	TLabel *Label13;
+	TLabel *Label14;
+	TLabel *Label15;
+	TLabel *Label16;
+	TLabel *Label17;
+	TLabel *Label18;
+	TLabel *Label19;
+	TLabel *Label20;
+	TLabel *Label21;
+	TLabel *Label22;
+	TLabel *Label23;
+	TLabel *Label24;
+	TLabel *Label25;
+	TLabel *Label26;
+	TLabel *Label27;
+	TLabel *Label28;
+	TLabel *Label29;
+	TLabel *Label30;
+	TLabel *Label31;
+	TLabel *Label32;
+	TLabel *Label33;
+	TLabel *Label34;
+	TLabel *Label35;
+	TLabel *Label36;
+	TLabel *Label37;
+	TLabel *Label38;
+	TLabel *Label39;
+	TLabel *Label40;
+	TLabel *Label41;
+	TLabel *Label42;
+	TLabel *Label43;
+	TLabel *Label44;
+	TLabel *Label45;
+	TLabel *Label46;
+	TLabel *Label47;
+	TLabel *Label48;
+	TLabel *Label49;
+	TLabel *Label50;
+	TLabel *Label51;
+	TLabel *Label52;
+	TLabel *Label53;
+	TLabel *Label54;
+	TLabel *Label55;
+	TLabel *Label56;
+	TPanel *Panel1;
+	TButton *buttonStart;
+	TMemo *memoChat;
+	TClientSocket *ClientSocket1;
+	void __fastcall zarButtonClick(TObject *Sender);
+	void __fastcall casaButtonClick(TObject *Sender);
+	void __fastcall mutaButtonClick(TObject *Sender);
+	void __fastcall ClientSocket1Read(TObject *Sender, TCustomWinSocket *Socket);
+	void __fastcall buttonStartClick(TObject *Sender);
+	void __fastcall ProcesareStartClient(int valoare);
+	void __fastcall MutarePionClient(String pion, int pozitieVeche, int pozitieNoua, int zarulet);
+	void __fastcall ProcesareCasaClient(String pion, int pozitieCasa);
+
+
+
+
+private:
+	TForm *newForm;
+	TForm *newForm2;
+	Pozitie pozitie;
+	int valoareZar;
+	int pozitieNoua1;
+	int pozitieNoua2;
+	int pozitieNoua3;
+	int pozitieNoua4;
+	bool pion1Scos = false;
+	bool pion2Scos = false;
+    bool pion3Scos = false;
+	bool pion4Scos = false;
+	bool pion1Casa = false;
+	bool pion2Casa = false;
+	bool pion3Casa = false;
+	bool pion4Casa = false;
+	int pozitieInitialaPionVerde1 = 0;
+	int pozitieInitialaPionVerde2 = 0;
+	int pozitieInitialaPionVerde3 = 0;
+	int pozitieInitialaPionVerde4 = 0;
+	int turaPionVerde=0;
+	int pionVerdeScos=0;
+	TButton *btn5, *btn6, *btn7, *btn8;
+	int start=0;
+	int turaJucator=3;
+	TClientSocket *ClientSocket;
+	TServerSocket *ServerSocket;
+	int normalizeazaPozitie(int pozitie);
+
+
+public:
+	__fastcall TNuTeSuparaFrate(TComponent* Owner);
+	void __fastcall Btn1Click(TObject *Sender);
+    void __fastcall Btn2Click(TObject *Sender);
+    void __fastcall Btn3Click(TObject *Sender);
+	void __fastcall Btn4Click(TObject *Sender);
+	void __fastcall Btn5Click(TObject *Sender);
+	void __fastcall Btn6Click(TObject *Sender);
+	void __fastcall Btn7Click(TObject *Sender);
+	void __fastcall Btn8Click(TObject *Sender);
+};
+
+extern PACKAGE TNuTeSuparaFrate *NuTeSuparaFrate;
+
+#endif

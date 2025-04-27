@@ -1,0 +1,20 @@
+﻿#ifndef PozitieH
+#define PozitieH
+#include <vcl.h>
+#include "Zar.h"
+
+class Pozitie {
+private:
+    TShape* pozitii[40];
+	int pozitieCurenta;
+	Zar zar;
+public:
+	Pozitie();
+	void adaugaPozitie(TShape* pozitie, int index);
+	TShape* getPozitie(int index);
+	int getZar();
+    int muta(int pozitieInitiala, int valoareZar);
+};
+
+#endif
+

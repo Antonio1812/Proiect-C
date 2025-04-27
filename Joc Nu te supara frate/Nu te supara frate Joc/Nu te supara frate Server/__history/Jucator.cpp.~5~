@@ -1,0 +1,57 @@
+﻿#include "Jucator.h"
+
+Jucator::Jucator(TColor culoare, const std::vector<TShape*>& tabla, int casaIndex)
+    : culoare(culoare), tabla(tabla), casaIndex(casaIndex) {
+    pozitiiPioni = {0, 0, 0, 0}; // Inițial toți pionii sunt în casă
+}
+
+bool Jucator::poateScoatePion() const {
+    for (int pozitie : pozitiiPioni) {
+        if (pozitie == 0) return true; // Dacă există un pion în casă, îl putem scoate
+    }
+    return false;
+}
+
+void Jucator::scoatePion() {
+    for (int i = 0; i < pozitiiPioni.size(); i++) {
+        if (pozitiiPioni[i] == 0) {
+            pozitiiPioni[i] = 1; // Scoatem pionul pe prima poziție
+            tabla[1]->Brush->Color = culoare; // Colorăm prima poziție
+            tabla[casaIndex]->Brush->Color = clWhite; // Curățăm „casa”
+            break;
+        }
+    }
+}
+
+bool Jucator::mutaPion(int indexPion, int numarZar) {
+    if (pozitiiPioni[indexPion] == 0) return false; // Dacă pionul e în casă, nu poate fi mutat
+
+    int pozitieVeche = pozitiiPioni[indexPion];
+    int pozitieNoua = pozitieVeche + numarZar;
+
+    if (pozitieNoua >= tabla.size()) {
+        pozitieNoua %= tabla.size(); // Reîncepe de la 1 dacă depășește limita
+    }
+
+    // Verificăm dacă pionul aterizează pe un alt pion
+    for (int i = 0; i < pozitiiPioni.size(); i++) {
+        if (pozitiiPioni[i] == pozitieNoua && i != indexPion) {
+            resetPion(i); // Trimitem pionul adversarului înapoi în casă
+        }
+    }
+
+    // Actualizăm tabla
+    tabla[pozitieVeche]->Brush->Color = clWhite; // Curățăm poziția veche
+    tabla[pozitieNoua]->Brush->Color = culoare; // Colorăm poziția nouă
+    pozitiiPioni[indexPion] = pozitieNoua; // Actualizăm poziția pionului
+
+    return true;
+}
+
+void Jucator::resetPion(int indexPion) {
+    int pozitiePion = pozitiiPioni[indexPion];
+    pozitiiPioni[indexPion] = 0; // Trimitem pionul în casă
+    tabla[pozitiePion]->Brush->Color = clWhite; // Curățăm tabla
+    tabla[casaIndex]->Brush->Color = culoare; // Colorăm casa
+}
+

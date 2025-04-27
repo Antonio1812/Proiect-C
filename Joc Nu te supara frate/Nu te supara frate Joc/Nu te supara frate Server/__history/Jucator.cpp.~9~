@@ -1,0 +1,17 @@
+﻿#include "Jucator.h"
+#include "Zar.h"
+
+// Constructorul clasei Jucator
+Jucator::Jucator(TShape* pozitie, TColor culoarePion) {
+    pion = pozitie;  // Pionul primit
+    culoare = culoarePion;  // Culoarea pionului
+    pion->Brush->Color = culoare;  // Setează culoarea pionului pe forma TShape
+}
+
+// Metoda pentru mutare
+void Jucator::muta(Zar& zar) {
+    int valoareZar = zar.arunca();  // Aruncă zarul
+    // Schimbă culoarea pionului la noua poziție (pentru exemplu, simulăm doar prin schimbarea culorii formei)
+    pion->Brush->Color = culoare;  // Pionul ajunge pe o altă poziție
+}
+

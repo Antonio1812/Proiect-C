@@ -1,0 +1,958 @@
+﻿#include <vcl.h>
+#pragma hdrstop
+#include "Zar.h"
+#include "Unit1.h"
+#include "Pozitie.h"
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+#include <cstdio>
+
+TNuTeSuparaFrate *NuTeSuparaFrate;
+
+__fastcall TNuTeSuparaFrate::TNuTeSuparaFrate(TComponent* Owner)
+	: TForm(Owner)
+{
+
+    pozitie.adaugaPozitie(Pozitia1, 0);
+    pozitie.adaugaPozitie(Pozitia2, 1);
+    pozitie.adaugaPozitie(Pozitia3, 2);
+    pozitie.adaugaPozitie(Pozitia4, 3);
+    pozitie.adaugaPozitie(Pozitia5, 4);
+    pozitie.adaugaPozitie(Pozitia6, 5);
+    pozitie.adaugaPozitie(Pozitia7, 6);
+	pozitie.adaugaPozitie(Pozitia8, 7);
+    pozitie.adaugaPozitie(Pozitia9, 8);
+    pozitie.adaugaPozitie(Pozitia10, 9);
+    pozitie.adaugaPozitie(Pozitia11, 10);
+    pozitie.adaugaPozitie(Pozitia12, 11);
+    pozitie.adaugaPozitie(Pozitia13, 12);
+    pozitie.adaugaPozitie(Pozitia14, 13);
+    pozitie.adaugaPozitie(Pozitia15, 14);
+    pozitie.adaugaPozitie(Pozitia16, 15);
+    pozitie.adaugaPozitie(Pozitia17, 16);
+    pozitie.adaugaPozitie(Pozitia18, 17);
+    pozitie.adaugaPozitie(Pozitia19, 18);
+    pozitie.adaugaPozitie(Pozitia20, 19);
+    pozitie.adaugaPozitie(Pozitia21, 20);
+    pozitie.adaugaPozitie(Pozitia22, 21);
+    pozitie.adaugaPozitie(Pozitia23, 22);
+    pozitie.adaugaPozitie(Pozitia24, 23);
+    pozitie.adaugaPozitie(Pozitia25, 24);
+    pozitie.adaugaPozitie(Pozitia26, 25);
+    pozitie.adaugaPozitie(Pozitia27, 26);
+    pozitie.adaugaPozitie(Pozitia28, 27);
+    pozitie.adaugaPozitie(Pozitia29, 28);
+    pozitie.adaugaPozitie(Pozitia30, 29);
+    pozitie.adaugaPozitie(Pozitia31, 30);
+    pozitie.adaugaPozitie(Pozitia32, 31);
+    pozitie.adaugaPozitie(Pozitia33, 32);
+    pozitie.adaugaPozitie(Pozitia34, 33);
+    pozitie.adaugaPozitie(Pozitia35, 34);
+    pozitie.adaugaPozitie(Pozitia36, 35);
+    pozitie.adaugaPozitie(Pozitia37, 36);
+    pozitie.adaugaPozitie(Pozitia38, 37);
+    pozitie.adaugaPozitie(Pozitia39, 38);
+	pozitie.adaugaPozitie(Pozitia40, 39);
+
+	pozitie.adaugaLabel(Label1, 0);
+	pozitie.adaugaLabel(Label2, 1);
+	pozitie.adaugaLabel(Label3, 2);
+	pozitie.adaugaLabel(Label4, 3);
+	pozitie.adaugaLabel(Label5, 4);
+	pozitie.adaugaLabel(Label6, 5);
+	pozitie.adaugaLabel(Label7, 6);
+	pozitie.adaugaLabel(Label8, 7);
+	pozitie.adaugaLabel(Label9, 8);
+	pozitie.adaugaLabel(Label10, 9);
+	pozitie.adaugaLabel(Label11, 10);
+	pozitie.adaugaLabel(Label12, 11);
+	pozitie.adaugaLabel(Label13, 12);
+	pozitie.adaugaLabel(Label14, 13);
+	pozitie.adaugaLabel(Label15, 14);
+	pozitie.adaugaLabel(Label16, 15);
+	pozitie.adaugaLabel(Label17, 16);
+	pozitie.adaugaLabel(Label18, 17);
+	pozitie.adaugaLabel(Label19, 18);
+	pozitie.adaugaLabel(Label20, 19);
+	pozitie.adaugaLabel(Label21, 20);
+	pozitie.adaugaLabel(Label22, 21);
+	pozitie.adaugaLabel(Label23, 22);
+	pozitie.adaugaLabel(Label24, 23);
+	pozitie.adaugaLabel(Label25, 24);
+	pozitie.adaugaLabel(Label26, 25);
+	pozitie.adaugaLabel(Label27, 26);
+	pozitie.adaugaLabel(Label28, 27);
+	pozitie.adaugaLabel(Label29, 28);
+	pozitie.adaugaLabel(Label30, 29);
+	pozitie.adaugaLabel(Label31, 30);
+	pozitie.adaugaLabel(Label32, 31);
+	pozitie.adaugaLabel(Label33, 32);
+	pozitie.adaugaLabel(Label34, 33);
+	pozitie.adaugaLabel(Label35, 34);
+	pozitie.adaugaLabel(Label36, 35);
+	pozitie.adaugaLabel(Label37, 36);
+	pozitie.adaugaLabel(Label38, 37);
+	pozitie.adaugaLabel(Label39, 38);
+	pozitie.adaugaLabel(Label40, 39);
+
+	mutaButton->Enabled=false;
+	casaButton->Enabled=false;
+
+	if (start<2) {
+	   zarButton->Enabled=false;
+	}
+	else if (start==2) {
+			 zarButton->Enabled=true;
+		 }
+
+	memoChat->Lines->Clear();
+	memoChat->Lines->Add("Apasa START pentru a incepe");
+
+}
+
+void __fastcall TNuTeSuparaFrate::zarButtonClick(TObject *Sender)
+{
+	valoareZar = pozitie.getZar();
+	Panel1->Caption = "AI ARUNCAT: " + IntToStr(valoareZar);
+	if (valoareZar == 6)
+	{
+		if (pionVerdeScos == 0)
+		{
+			mutaButton->Enabled = false;
+			casaButton->Enabled = true;
+			zarButton->Enabled = false;
+		}
+		else
+		{
+			mutaButton->Enabled = true;
+			casaButton->Enabled = true;
+			zarButton->Enabled = false;
+		}
+	}
+	else if (valoareZar < 6 && pionVerdeScos > 0)
+	{
+		mutaButton->Enabled = true;
+        casaButton->Enabled = false;
+        zarButton->Enabled = false;
+	}
+}
+
+
+
+void __fastcall TNuTeSuparaFrate::casaButtonClick(TObject *Sender)
+{
+ if (newForm == nullptr)
+ {
+ newForm = new TForm(this);
+ newForm->Caption = "Scoate Pion";
+ newForm->Width = 375;
+ newForm->Height = 300;
+ newForm->Position = poScreenCenter;
+
+	TButton *btn1 = new TButton(newForm);
+	btn1->Parent = newForm;
+	btn1->Caption = "Pion 1";
+	btn1->Left = 50;
+	btn1->Top = 50;
+	btn1->Height=50;
+    btn1->Width=100;
+	btn1->OnClick = Btn1Click;
+
+	TButton *btn2 = new TButton(newForm);
+    btn2->Parent = newForm;
+	btn2->Caption = "Pion 2";
+	btn2->Left = 200;
+	btn2->Top = 50;
+	btn2->Height=50;
+	btn2->Width=100;
+	btn2->OnClick = Btn2Click;
+
+	TButton *btn3 = new TButton(newForm);
+	btn3->Parent = newForm;
+	btn3->Caption = "Pion 3";
+	btn3->Left = 50;
+	btn3->Top = 150;
+	btn3->Height=50;
+	btn3->Width=100;
+	btn3->OnClick = Btn3Click;
+
+	TButton *btn4 = new TButton(newForm);
+	btn4->Parent = newForm;
+	btn4->Caption = "Pion 4";
+	btn4->Left = 200;
+	btn4->Top = 150;
+	btn4->Height=50;
+	btn4->Width=100;
+	btn4->OnClick = Btn4Click;
+
+	newForm->Show();
+	}
+	else
+	{
+	newForm->Show();
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TNuTeSuparaFrate::Btn1Click(TObject *Sender)
+{
+	if (pion1Scos || Pozitia1->Brush->Color==clLime)
+	{
+		ShowMessage("Pionul 1 a fost deja scos sau ai un pion scos pe pozitia de start.");
+	}
+	else
+	{
+	turaPionVerde++;
+	Pozitia1->Brush->Color=clLime;
+	PionVerde1->Brush->Color=TColor(clWhite);
+	pion1Scos = true;
+	pionVerdeScos++;
+
+	String mesaj = "C P1 0";
+	ClientSocket1->Socket->SendText(mesaj);
+
+	if (newForm != nullptr)
+	{
+	newForm->Hide();
+	mutaButton->Enabled = false;
+	casaButton->Enabled = false;
+	zarButton->Enabled = true;
+	}
+	}
+}
+
+void __fastcall TNuTeSuparaFrate::Btn2Click(TObject *Sender)
+{
+	if (pion2Scos || Pozitia1->Brush->Color==clLime)
+	{
+		ShowMessage("Pionul 2 a fost deja scos sau ai un pion scos pe pozitia de start.");
+	}
+	else
+	{
+		turaPionVerde++;
+		Pozitia1->Brush->Color = clLime;
+		PionVerde2->Brush->Color = TColor(clWhite);
+		pion2Scos = true;
+		pionVerdeScos++;
+
+		String mesaj = "C P2 0";
+		ClientSocket1->Socket->SendText(mesaj);
+
+		if (newForm != nullptr)
+		{
+		newForm->Hide();
+		mutaButton->Enabled = false;
+		casaButton->Enabled = false;
+		zarButton->Enabled = true;
+		}
+	}
+}
+
+void __fastcall TNuTeSuparaFrate::Btn3Click(TObject *Sender)
+{
+	if (pion3Scos|| Pozitia1->Brush->Color==clLime)
+	{
+		ShowMessage("Pionul 3 a fost deja scos sau ai un pion scos pe pozitia de start.");
+	}
+	else
+	{
+		turaPionVerde++;
+		Pozitia1->Brush->Color = clLime;
+		PionVerde3->Brush->Color = TColor(clWhite);
+		pion3Scos = true;
+		pionVerdeScos++;
+
+		String mesaj = "C P3 0";
+		ClientSocket1->Socket->SendText(mesaj);
+
+		if (newForm != nullptr)
+		{
+		newForm->Hide();
+		mutaButton->Enabled = false;
+		casaButton->Enabled = false;
+		zarButton->Enabled = true;
+		}
+	}
+}
+
+void __fastcall TNuTeSuparaFrate::Btn4Click(TObject *Sender)
+{
+	if (pion4Scos|| Pozitia1->Brush->Color==clLime)
+	{
+		ShowMessage("Pionul 4 a fost deja scos sau ai un pion scos pe pozitia de start.");
+	}
+	else
+	{
+		turaPionVerde++;
+		Pozitia1->Brush->Color = clLime;
+		PionVerde4->Brush->Color = TColor(clWhite);
+		pion4Scos = true;
+		pionVerdeScos++;
+
+		String mesaj = "C P4 0";
+		ClientSocket1->Socket->SendText(mesaj);
+
+		if (newForm != nullptr)
+		{
+			newForm->Hide();
+			mutaButton->Enabled = false;
+			casaButton->Enabled = false;
+			zarButton->Enabled = true;
+		}
+	}
+}
+
+void __fastcall TNuTeSuparaFrate::mutaButtonClick(TObject *Sender)
+{
+if (newForm2 == nullptr)
+{
+		newForm2 = new TForm(this);
+		newForm2->Caption = "Muta Pionul";
+		newForm2->Width = 375;
+		newForm2->Height = 300;
+		newForm2->Position = poScreenCenter;
+
+		btn5 = new TButton(newForm2);
+		btn5->Parent = newForm2;
+		btn5->Caption = "Pion 1";
+		btn5->Left = 50;
+		btn5->Top = 50;
+		btn5->Height = 50;
+		btn5->Width = 100;
+		btn5->OnClick = Btn5Click;
+		btn5->Enabled = !pion1Casa;
+
+        btn6 = new TButton(newForm2);
+		btn6->Parent = newForm2;
+        btn6->Caption = "Pion 2";
+        btn6->Left = 200;
+		btn6->Top = 50;
+		btn6->Height = 50;
+		btn6->Width = 100;
+		btn6->OnClick = Btn6Click;
+		btn6->Enabled = !pion2Casa;
+
+		btn7 = new TButton(newForm2);
+		btn7->Parent = newForm2;
+		btn7->Caption = "Pion 3";
+		btn7->Left = 50;
+		btn7->Top = 150;
+		btn7->Height = 50;
+		btn7->Width = 100;
+		btn7->OnClick = Btn7Click;
+		btn7->Enabled = !pion3Casa;
+
+		btn8 = new TButton(newForm2);
+		btn8->Parent = newForm2;
+		btn8->Caption = "Pion 4";
+		btn8->Left = 200;
+		btn8->Top = 150;
+		btn8->Height = 50;
+		btn8->Width = 100;
+		btn8->OnClick = Btn8Click;
+		btn8->Enabled = !pion4Casa;
+
+	newForm2->Show();
+	}
+	else
+	{
+		btn5->Enabled = !pion1Casa;
+		btn6->Enabled = !pion2Casa;
+		btn7->Enabled = !pion3Casa;
+		btn8->Enabled = !pion4Casa;
+
+		newForm2->Show();
+	}
+}
+
+void __fastcall TNuTeSuparaFrate::Btn5Click(TObject *Sender)
+{
+    if (!pion1Scos)
+    {
+        ShowMessage("Nu ai un pion scos din casa sau pionul pe care vrei sa-l muti inca nu e scos din casa");
+        return;
+    }
+
+    pozitieNoua1 = pozitie.muta(pozitieInitialaPionVerde1, valoareZar);
+
+    if (pozitieInitialaPionVerde1 >= 35 && pozitieInitialaPionVerde1 <= 39)
+    {
+        int pasiTotali = pozitieInitialaPionVerde1 + valoareZar;
+        if (pasiTotali > 39)
+        {
+            int pasiRamasi1 = pasiTotali - 39;
+
+            if (pasiRamasi1 <= 4)
+            {
+                if ((pasiRamasi1 == 1 && FinishVerde1->Brush->Color == clLime) ||
+                    (pasiRamasi1 == 2 && FinishVerde2->Brush->Color == clLime) ||
+                    (pasiRamasi1 == 3 && FinishVerde3->Brush->Color == clLime) ||
+                    (pasiRamasi1 == 4 && FinishVerde4->Brush->Color == clLime))
+                {
+                    ShowMessage("Ai deja un pion in casa pe acea pozitie");
+                    return;
+                }
+
+                if (pasiRamasi1 == 1){
+                    FinishVerde1->Brush->Color = clLime;
+                    pion1Casa = true;
+                }
+                else if (pasiRamasi1 == 2){
+                    FinishVerde2->Brush->Color = clLime;
+                    pion1Casa = true;
+                }
+                else if (pasiRamasi1 == 3){
+                    FinishVerde3->Brush->Color = clLime;
+                    pion1Casa = true;
+                }
+                else if (pasiRamasi1 == 4){
+                    FinishVerde4->Brush->Color = clLime;
+                    pion1Casa = true;
+                }
+
+                TLabel* labelVechi = pozitie.getLabel(pozitieInitialaPionVerde1);
+                TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde1);
+                if (shapeVechi)
+                {
+                    shapeVechi->Brush->Color = clWhite;
+                    labelVechi->Caption = pozitieInitialaPionVerde1 + 1;
+                }
+
+                zarButton->Enabled = true;
+                mutaButton->Enabled = false;
+                pion1Casa = true;
+                newForm2->Hide();
+
+                pozitieInitialaPionVerde1 = -1;
+                return;
+            }
+            else
+            {
+                if (pion2Scos || pion3Scos || pion4Scos)
+				{
+					ShowMessage("Numarul de pasi depaseste limitele casei. Alege alt pion pentru mutare.");
+                    newForm2->Show();
+                    return;
+                }
+                else
+                {
+                    ShowMessage("Nu ai pion care sa poata fi mutat, randul urmatorului jucator");
+                    mutaButton->Enabled = false;
+                    casaButton->Enabled = false;
+                    zarButton->Enabled = true;
+                    newForm2->Hide();
+                    return;
+                }
+            }
+        }
+    }
+
+    TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde1);
+    TShape* shapeNou = pozitie.getPozitie(pozitieNoua1);
+
+    if (shapeNou->Brush->Color == clLime)
+    {
+        ShowMessage("Un pion propriu este deja pe acea pozitie, alege alt pion care sa fie mutat");
+        newForm2->Show();
+        return;
+    }
+
+    pozitie.actualizeazaLabel(pozitieInitialaPionVerde1, pozitieNoua1, "P1");
+    if (shapeVechi)
+        shapeVechi->Brush->Color = clWhite;
+
+    if (shapeNou)
+        shapeNou->Brush->Color = clLime;
+
+	pozitieInitialaPionVerde1 = pozitieNoua1;
+	int vechi1=pozitieInitialaPionVerde1-valoareZar;
+
+    if (newForm2 != nullptr)
+    {
+        newForm2->Hide();
+        mutaButton->Enabled = false;
+        casaButton->Enabled = false;
+        zarButton->Enabled = true;
+	}
+	String mesaj = "M P1 " + IntToStr(vechi1) + " " + IntToStr(pozitieNoua1);
+	ClientSocket1->Socket->SendText(mesaj);
+}
+
+
+
+void __fastcall TNuTeSuparaFrate::Btn6Click(TObject *Sender)
+{
+    if (!pion2Scos)
+    {
+        ShowMessage("Nu ai un pion scos din casa sau pionul pe care vrei sa-l muti inca nu e scos din casa");
+        return;
+    }
+
+    pozitieNoua2 = pozitie.muta(pozitieInitialaPionVerde2, valoareZar);
+
+    if (pozitieInitialaPionVerde2 >= 35 && pozitieInitialaPionVerde2 <= 39)
+    {
+        int pasiTotali = pozitieInitialaPionVerde2 + valoareZar;
+        if (pasiTotali > 39)
+        {
+            int pasiRamasi2 = pasiTotali - 39;
+
+            if (pasiRamasi2 <= 4)
+            {
+                if ((pasiRamasi2 == 1 && FinishVerde1->Brush->Color == clLime) ||
+                    (pasiRamasi2 == 2 && FinishVerde2->Brush->Color == clLime) ||
+                    (pasiRamasi2 == 3 && FinishVerde3->Brush->Color == clLime) ||
+                    (pasiRamasi2 == 4 && FinishVerde4->Brush->Color == clLime))
+                {
+                    ShowMessage("Ai deja un pion in casa pe acea pozitie");
+                    return;
+                }
+
+                if (pasiRamasi2 == 1)
+                {
+                    FinishVerde1->Brush->Color = clLime;
+                    pion2Casa = true;
+                }
+                else if (pasiRamasi2 == 2)
+                {
+                    FinishVerde2->Brush->Color = clLime;
+                    pion2Casa = true;
+                }
+                else if (pasiRamasi2 == 3)
+                {
+                    FinishVerde3->Brush->Color = clLime;
+                    pion2Casa = true;
+                }
+                else if (pasiRamasi2 == 4)
+                {
+                    FinishVerde4->Brush->Color = clLime;
+                    pion2Casa = true;
+                }
+
+                TLabel* labelVechi = pozitie.getLabel(pozitieInitialaPionVerde2);
+                TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde2);
+                if (shapeVechi)
+                {
+                    shapeVechi->Brush->Color = clWhite;
+                    labelVechi->Caption = pozitieInitialaPionVerde2 + 1;
+                }
+
+                zarButton->Enabled = true;
+                mutaButton->Enabled = false;
+                pion2Casa = true;
+                newForm2->Hide();
+
+                pozitieInitialaPionVerde2 = -1;
+                return;
+            }
+            else
+            {
+                if (pion1Scos || pion3Scos || pion4Scos)
+                {
+					ShowMessage("Numarul de pasi depaseste limitele casei. Alege alt pion pentru mutare.");
+                    newForm2->Show();
+                    return;
+                }
+                else
+                {
+                    ShowMessage("Nu ai pion care sa poata fi mutat, randul urmatorului jucator");
+                    mutaButton->Enabled = false;
+                    casaButton->Enabled = false;
+                    zarButton->Enabled = true;
+                    newForm2->Hide();
+                    return;
+                }
+            }
+        }
+    }
+
+    TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde2);
+    TShape* shapeNou = pozitie.getPozitie(pozitieNoua2);
+
+    if (shapeNou->Brush->Color == clLime)
+    {
+        ShowMessage("Un pion propriu este deja pe acea pozitie, alege alt pion care sa fie mutat");
+        newForm2->Show();
+        return;
+    }
+
+    pozitie.actualizeazaLabel(pozitieInitialaPionVerde2, pozitieNoua2, "P2");
+    if (shapeVechi)
+        shapeVechi->Brush->Color = clWhite;
+
+    if (shapeNou)
+        shapeNou->Brush->Color = clLime;
+
+	pozitieInitialaPionVerde2 = pozitieNoua2;
+	int vechi2=pozitieInitialaPionVerde2-valoareZar;
+
+    if (newForm2 != nullptr)
+    {
+        newForm2->Hide();
+        mutaButton->Enabled = false;
+        casaButton->Enabled = false;
+        zarButton->Enabled = true;
+	}
+	String mesaj = "M P2 " + IntToStr(vechi2) + " " + IntToStr(pozitieNoua2);
+	ClientSocket1->Socket->SendText(mesaj);
+}
+
+
+
+
+void __fastcall TNuTeSuparaFrate::Btn7Click(TObject *Sender)
+{
+    if (!pion3Scos)
+    {
+        ShowMessage("Nu ai un pion scos din casa sau pionul pe care vrei sa-l muti inca nu e scos din casa");
+        return;
+    }
+
+    pozitieNoua3 = pozitie.muta(pozitieInitialaPionVerde3, valoareZar);
+
+    if (pozitieInitialaPionVerde3 >= 35 && pozitieInitialaPionVerde3 <= 39)
+    {
+        int pasiTotali = pozitieInitialaPionVerde3 + valoareZar;
+        if (pasiTotali > 39)
+        {
+            int pasiRamasi3 = pasiTotali - 39;
+
+            if (pasiRamasi3 <= 4)
+            {
+                if ((pasiRamasi3 == 1 && FinishVerde1->Brush->Color == clLime) ||
+                    (pasiRamasi3 == 2 && FinishVerde2->Brush->Color == clLime) ||
+                    (pasiRamasi3 == 3 && FinishVerde3->Brush->Color == clLime) ||
+                    (pasiRamasi3 == 4 && FinishVerde4->Brush->Color == clLime))
+                {
+                    ShowMessage("Ai deja un pion in casa pe acea pozitie");
+                    return;
+                }
+
+                if (pasiRamasi3 == 1)
+                {
+                    FinishVerde1->Brush->Color = clLime;
+                    pion3Casa = true;
+                }
+                else if (pasiRamasi3 == 2)
+                {
+                    FinishVerde2->Brush->Color = clLime;
+                    pion3Casa = true;
+                }
+                else if (pasiRamasi3 == 3)
+                {
+                    FinishVerde3->Brush->Color = clLime;
+                    pion3Casa = true;
+                }
+                else if (pasiRamasi3 == 4)
+                {
+                    FinishVerde4->Brush->Color = clLime;
+                    pion3Casa = true;
+                }
+
+                TLabel* labelVechi = pozitie.getLabel(pozitieInitialaPionVerde3);
+                TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde3);
+                if (shapeVechi)
+                {
+                    shapeVechi->Brush->Color = clWhite;
+                    labelVechi->Caption = pozitieInitialaPionVerde3 + 1;
+                }
+
+                zarButton->Enabled = true;
+                mutaButton->Enabled = false;
+                pion3Casa = true;
+                newForm2->Hide();
+
+                pozitieInitialaPionVerde3 = -1;
+                return;
+            }
+            else
+            {
+                if (pion1Scos || pion2Scos || pion4Scos)
+                {
+					ShowMessage("Numarul de pasi depaseste limitele casei. Alege alt pion pentru mutare.");
+                    newForm2->Show();
+                    return;
+                }
+                else
+                {
+                    ShowMessage("Nu ai pion care sa poata fi mutat, randul urmatorului jucator");
+                    mutaButton->Enabled = false;
+                    casaButton->Enabled = false;
+                    zarButton->Enabled = true;
+                    newForm2->Hide();
+                    return;
+                }
+            }
+        }
+    }
+
+    TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde3);
+    TShape* shapeNou = pozitie.getPozitie(pozitieNoua3);
+
+    if (shapeNou->Brush->Color == clLime)
+    {
+        ShowMessage("Un pion propriu este deja pe acea pozitie, alege alt pion care sa fie mutat");
+        newForm2->Show();
+        return;
+    }
+
+    pozitie.actualizeazaLabel(pozitieInitialaPionVerde3, pozitieNoua3, "P3");
+    if (shapeVechi)
+        shapeVechi->Brush->Color = clWhite;
+
+    if (shapeNou)
+        shapeNou->Brush->Color = clLime;
+
+	pozitieInitialaPionVerde3 = pozitieNoua3;
+	int vechi3=pozitieInitialaPionVerde3-valoareZar;
+
+    if (newForm2 != nullptr)
+    {
+        newForm2->Hide();
+        mutaButton->Enabled = false;
+		casaButton->Enabled = false;
+		zarButton->Enabled = true;
+	}
+	String mesaj = "M P3 " + IntToStr(vechi3) + " " + IntToStr(pozitieNoua3);
+	ClientSocket1->Socket->SendText(mesaj);
+}
+
+
+
+void __fastcall TNuTeSuparaFrate::Btn8Click(TObject *Sender)
+{
+	if (!pion4Scos)
+	{
+		ShowMessage("Nu ai un pion scos din casa sau pionul pe care vrei sa-l muti inca nu e scos din casa");
+        return;
+    }
+
+	pozitieNoua4 = pozitie.muta(pozitieInitialaPionVerde4, valoareZar);
+
+    if (pozitieInitialaPionVerde4 >= 35 && pozitieInitialaPionVerde4 <= 39)
+    {
+		int pasiTotali = pozitieInitialaPionVerde4 + valoareZar;
+        if (pasiTotali > 39)
+        {
+            int pasiRamasi4 = pasiTotali - 39;
+
+            if (pasiRamasi4 <= 4)
+            {
+                if ((pasiRamasi4 == 1 && FinishVerde1->Brush->Color == clLime) ||
+					(pasiRamasi4 == 2 && FinishVerde2->Brush->Color == clLime) ||
+                    (pasiRamasi4 == 3 && FinishVerde3->Brush->Color == clLime) ||
+                    (pasiRamasi4 == 4 && FinishVerde4->Brush->Color == clLime))
+                {
+					ShowMessage("Ai deja un pion in casa pe acea pozitie");
+                    return;
+                }
+
+				if (pasiRamasi4 == 1)
+                {
+                    FinishVerde1->Brush->Color = clLime;
+                    pion4Casa = true;
+				}
+                else if (pasiRamasi4 == 2)
+                {
+                    FinishVerde2->Brush->Color = clLime;
+					pion4Casa = true;
+                }
+                else if (pasiRamasi4 == 3)
+                {
+					FinishVerde3->Brush->Color = clLime;
+                    pion4Casa = true;
+                }
+                else if (pasiRamasi4 == 4)
+				{
+                    FinishVerde4->Brush->Color = clLime;
+                    pion4Casa = true;
+                }
+
+                TLabel* labelVechi = pozitie.getLabel(pozitieInitialaPionVerde4);
+                TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde4);
+                if (shapeVechi)
+				{
+                    shapeVechi->Brush->Color = clWhite;
+                    labelVechi->Caption = pozitieInitialaPionVerde4 + 1;
+                }
+
+                zarButton->Enabled = true;
+                mutaButton->Enabled = false;
+                pion4Casa = true;
+				newForm2->Hide();
+
+                pozitieInitialaPionVerde4 = -1;
+                return;
+			}
+            else
+            {
+                if (pion1Scos || pion2Scos || pion3Scos)
+				{
+					ShowMessage("Numarul de pasi depaseste limitele casei. Alege alt pion pentru mutare.");
+                    newForm2->Show();
+                    return;
+				}
+                else
+                {
+                    ShowMessage("Nu ai pion care sa poata fi mutat, randul urmatorului jucator");
+					mutaButton->Enabled = false;
+                    casaButton->Enabled = false;
+                    zarButton->Enabled = true;
+                    newForm2->Hide();
+					return;
+                }
+            }
+        }
+	}
+
+    TShape* shapeVechi = pozitie.getPozitie(pozitieInitialaPionVerde4);
+    TShape* shapeNou = pozitie.getPozitie(pozitieNoua4);
+
+    if (shapeNou->Brush->Color == clLime)
+    {
+        ShowMessage("Un pion propriu este deja pe acea pozitie, alege alt pion care sa fie mutat");
+		newForm2->Show();
+        return;
+    }
+
+	pozitie.actualizeazaLabel(pozitieInitialaPionVerde4, pozitieNoua4, "P4");
+    if (shapeVechi)
+        shapeVechi->Brush->Color = clWhite;
+
+	if (shapeNou)
+        shapeNou->Brush->Color = clLime;
+
+	pozitieInitialaPionVerde4 = pozitieNoua4;
+	int vechi4=pozitieInitialaPionVerde4-valoareZar;
+
+    if (newForm2 != nullptr)
+    {
+        newForm2->Hide();
+		mutaButton->Enabled = false;
+        casaButton->Enabled = false;
+        zarButton->Enabled = true;
+	}
+	String mesaj = "M P4 " + IntToStr(vechi4) + " " + IntToStr(pozitieNoua4);
+	ClientSocket1->Socket->SendText(mesaj);
+}
+
+int TNuTeSuparaFrate::normalizeazaPozitie(int pozitie) {
+	const int MAX_POZITII = 40;
+	while (pozitie < 0) {
+		pozitie += MAX_POZITII;
+	}
+	pozitie = pozitie % MAX_POZITII;
+	return pozitie;
+}
+
+
+void __fastcall TNuTeSuparaFrate::ProcesareStartClient(int valoare)
+{
+	if (valoare ==1) {
+		buttonStart->Enabled = true;
+	}
+	else if (valoare == 2) {
+		buttonStart->Enabled = false;
+		memoChat->Lines->Add("Client: Jocul începe!");
+	}
+}
+
+void __fastcall TNuTeSuparaFrate::MutarePionClient(String pion, int pozitieVeche, int pozitieNoua)
+{
+    pozitieVeche = normalizeazaPozitie(pozitieVeche);
+	pozitieNoua = normalizeazaPozitie(pozitieNoua);
+	TShape* shapeVechi = pozitie.getPozitie(pozitieVeche);
+    if (shapeVechi) {
+        shapeVechi->Brush->Color = clWhite;
+	}
+    TShape* shapeNou = pozitie.getPozitie(pozitieNoua);
+    if (shapeNou) {
+		shapeNou->Brush->Color = TColor(RGB(255, 215, 0));
+	}
+    pozitie.actualizeazaLabel(pozitieVeche, pozitieNoua, pion);
+}
+
+
+
+void __fastcall TNuTeSuparaFrate::ProcesareCasaClient(String pion, int pozitieCasa)
+{
+	TShape* casaNoua = pozitie.getPozitie(pozitieCasa);
+	if (casaNoua) {
+		casaNoua->Brush->Color = TColor(RGB(255, 215, 0));
+	}
+
+	if (pion == "P4") {
+		PionGalben4->Brush->Color = clWhite;
+	}
+}
+
+
+
+
+void __fastcall TNuTeSuparaFrate::ClientSocket1Read(TObject *Sender, TCustomWinSocket *Socket)
+{
+	String receivedValues = Socket->ReceiveText();
+	if (receivedValues.SubString(1, 1) == "S") {
+        TStringList* values = new TStringList();
+        values->Delimiter = ' ';
+        values->DelimitedText = receivedValues;
+
+        if (values->Count > 1) {
+            int receivedStart = StrToInt(values->Strings[1]);
+            start = receivedStart;
+
+            memoChat->Lines->Add("Server: START " + IntToStr(start) + "/2");
+
+            if (start == 1) {
+				buttonStart->Enabled = true;
+            } else if (start == 2) {
+				buttonStart->Enabled = false;
+				zarButton->Enabled = true;
+            }
+
+            delete values;
+        }
+	}
+    else if (receivedValues.SubString(1, 1) == "M") {
+        TStringList* values = new TStringList();
+        values->Delimiter = ' ';
+        values->DelimitedText = receivedValues;
+
+        if (values->Count == 4 && values->Strings[0] == "M") {
+            String pion = values->Strings[1];
+            int pozitieVeche = StrToInt(values->Strings[2]);
+            int pozitieNoua = StrToInt(values->Strings[3]);
+
+			memoChat->Lines->Add("Jucator 1: Muta " + pion + " la " + IntToStr(pozitieNoua+1));
+            MutarePionClient(pion, pozitieVeche, pozitieNoua);
+        }
+
+        delete values;
+    }
+	else if (receivedValues.SubString(1, 1) == "C") {
+		TStringList* values = new TStringList();
+		values->Delimiter = ' ';
+		values->DelimitedText = receivedValues;
+
+		if (values->Count == 3 && values->Strings[0] == "C") {
+			String pion = values->Strings[1];
+			int pozitieCasa = StrToInt(values->Strings[2]);
+
+			memoChat->Lines->Add("Jucator 1: Scoate " + pion + " pe pozitia " + IntToStr(pozitieCasa));
+            ProcesareCasaClient(pion, pozitieCasa);
+		}
+
+        delete values;
+	}
+}
+
+
+void __fastcall TNuTeSuparaFrate::buttonStartClick(TObject *Sender)
+{
+    start = 2;
+    String mesaj = "S " + IntToStr(start);
+	ClientSocket1->Socket->SendText(mesaj);
+	memoChat->Lines->Add("START: " +mesaj+"/2");
+	buttonStart->Enabled = false;
+}
+//---------------------------------------------------------------------------
+

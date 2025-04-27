@@ -1,0 +1,65 @@
+﻿#include "Jucator.h"
+
+// Constructor
+Jucator::Jucator(TColor culoare, TShape* casa)
+    : culoare(culoare), zar(), pioniFinalizati(0), casa(casa) {}
+
+// Aruncă zarul
+int Jucator::aruncaZar() {
+    return zar.arunca();
+}
+
+// Adaugă un pion în casă
+void Jucator::adaugaPion() {
+    pioni.push_back(-1); // Poziția -1 indică faptul că pionul este în casă
+}
+
+// Mută un pion pe tablă
+bool Jucator::mutaPion(int index, int mutare, TShape* tabla[]) {
+    if (index < 0 || index >= pioni.size()) return false; // Index invalid
+
+    int pozitieVeche = pioni[index];
+    int pozitieNoua = pozitieVeche + mutare;
+
+    // Dacă pionul este în casă și poate fi scos
+    if (pozitieVeche == -1 && mutare == 6) {
+        pozitieNoua = 0; // Poziția inițială pe tablă
+    } else if (pozitieVeche == -1) {
+        return false; // Nu poate ieși din casă fără un 6
+    }
+
+    // Dacă pionul ajunge în afara tablei
+    if (pozitieNoua >= 40) {
+        pozitieNoua = 40; // Finalizarea jocului pentru acel pion
+        pioniFinalizati++;
+        tabla[pozitieVeche]->Brush->Color = clBtnFace; // Curățăm poziția veche
+        return true;
+    }
+
+    // Dacă pe noua poziție există un pion
+    for (int i = 0; i < pioni.size(); i++) {
+        if (pioni[i] == pozitieNoua) {
+            // Pionul este lovit și trimis înapoi în casă
+            pioni[i] = -1;
+            casa->Brush->Color = culoare; // Casa primește culoarea pionului
+            break;
+        }
+    }
+
+    // Actualizăm tabla
+    if (pozitieVeche != -1) {
+        tabla[pozitieVeche]->Brush->Color = clBtnFace; // Restabilim culoarea neutră
+    }
+    tabla[pozitieNoua]->Brush->Color = culoare;
+
+    // Actualizăm poziția pionului
+    pioni[index] = pozitieNoua;
+
+    return true;
+}
+
+// Returnează culoarea jucătorului
+TColor Jucator::getCuloare() const {
+    return culoare;
+}
+

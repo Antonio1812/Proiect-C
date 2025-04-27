@@ -1,0 +1,16 @@
+﻿#ifndef JucatorH
+#define JucatorH
+#include <System.hpp>
+#include <Vcl.ExtCtrls.hpp>  // Pentru TShape
+#include <System.UITypes.hpp>  // Pentru TColor
+
+class Jucator {
+private:
+    TShape* pion;  // Pionul asociat
+    TColor culoare;  // Culoarea pionului
+public:
+    Jucator(TShape* pozitie, TColor culoarePion);  // Constructor
+    void muta(Zar& zar);  // Metoda de mutare
+};
+#endif
+

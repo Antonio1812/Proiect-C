@@ -1,0 +1,13 @@
+#ifndef ZarH
+#define ZarH
+#include <System.hpp>
+
+class Zar{
+	private:
+	//int valoare;
+	public:
+	Zar();
+	int arunca();
+	int getValoare() const;
+};
+#endif

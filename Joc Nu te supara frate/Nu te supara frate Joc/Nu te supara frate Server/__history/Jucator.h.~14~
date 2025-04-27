@@ -1,0 +1,22 @@
+﻿#ifndef JucatorH
+#define JucatorH
+
+#include <System.hpp>
+#include <Vcl.ExtCtrls.hpp>  // Pentru TShape
+
+class Zar;  // Declarația clasei Zar, pentru a o folosi în funcția `muta`
+
+class Jucator {
+private:
+    TShape* pion;      // Pionul jucătorului
+    TColor culoare;    // Culoarea pionului
+public:
+    // Constructor care primește un TShape și culoarea jucătorului
+    Jucator(TShape* pionShape, TColor culoareJucator);
+
+    // Metoda pentru a muta pionul pe baza rezultatului zarului
+    void muta(Zar& zar);
+};
+
+#endif
+

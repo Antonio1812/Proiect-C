@@ -1,0 +1,38 @@
+﻿#include "Jucator.h"
+
+Jucator::Jucator(TShape *pionShape, TColor culoarePion) {
+    pion = pionShape;
+    culoare = culoarePion;
+}
+
+// Funcția pentru mutarea pionului
+void Jucator::muta(Zar& zar) {
+    int valoareZar = zar.arunca();  // Obținem valoarea aruncată de zar
+
+    // Aici facem schimbarea de culoare în funcție de valoarea zarului
+    // Pionul se mișcă la o nouă poziție colorând forma respectivă
+
+    switch (valoareZar) {
+        case 1:
+            pion->Brush->Color = culoare;  // Schimbă culoarea pionului
+            break;
+        case 2:
+            pion->Brush->Color = culoare;  // Poți adăuga și alte logicuri aici
+            break;
+        case 3:
+            pion->Brush->Color = culoare;
+            break;
+        case 4:
+            pion->Brush->Color = culoare;
+            break;
+        case 5:
+            pion->Brush->Color = culoare;
+            break;
+        case 6:
+            pion->Brush->Color = culoare;
+            break;
+        default:
+            break;
+    }
+}
+

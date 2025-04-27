@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/11/19 11:37:18.000.857,=C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2024/11/19 11:37:18.000.669,=C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2024/11/19 14:34:12.000.353,=C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2024/11/19 14:34:12.000.307,=C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2024/11/19 14:34:57.000.045,C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\Project1PCH1.h</Transaction>
+    <Transaction>2024/11/19 14:34:57.000.062,C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\AntonioPC\Desktop\Nu te supara frate\Unit1.dfm</Transaction>
+    <Transaction>2024/11/19 14:34:57.000.062,C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\AntonioPC\Desktop\Nu te supara frate\Unit1.cpp</Transaction>
+    <Transaction>2024/11/19 14:34:57.000.076,C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\AntonioPC\Desktop\Nu te supara frate\Project1.cbproj</Transaction>
+    <Transaction>2024/11/19 14:34:57.000.062,C:\Users\AntonioPC\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\Unit1.h</Transaction>
+    <Transaction>2024/12/03 08:41:18.000.438,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 08:41:35.000.662,C:\Users\AntonioPC\Desktop\Nu te supara frate\Zar.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 08:42:48.000.700,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 08:43:15.000.595,C:\Users\AntonioPC\Desktop\Nu te supara frate\Zar.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 09:31:50.000.099,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 09:31:57.000.545,C:\Users\AntonioPC\Desktop\Nu te supara frate\Jucator.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 09:32:04.000.812,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 09:32:11.000.319,C:\Users\AntonioPC\Desktop\Nu te supara frate\Jucator.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 15:40:40.000.976,C:\Users\AntonioPC\Desktop\Nu te supara frate\Project1PCH1.h=</Transaction>
+    <Transaction>2024/12/03 15:44:53.000.207,C:\Users\AntonioPC\Desktop\Nu te supara frate\Jucator.h=</Transaction>
+    <Transaction>2024/12/03 15:44:57.000.701,C:\Users\AntonioPC\Desktop\Nu te supara frate\Jucator.cpp=</Transaction>
+    <Transaction>2024/12/03 22:44:39.000.089,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 22:44:58.000.512,C:\Users\AntonioPC\Desktop\Nu te supara frate\Pion.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 22:45:08.000.057,C:\Users\AntonioPC\Desktop\Nu te supara frate\Pion.h=</Transaction>
+    <Transaction>2024/12/03 22:45:15.000.973,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 22:45:33.000.306,C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 22:46:35.000.005,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 22:46:42.000.442,C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 23:38:12.000.089,C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.h=</Transaction>
+    <Transaction>2024/12/03 23:38:17.000.324,C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.cpp=</Transaction>
+    <Transaction>2024/12/03 23:53:29.000.359,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 23:54:00.000.631,C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.h</Transaction>
+    <Transaction>2024/12/03 23:55:30.000.289,C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.h=</Transaction>
+    <Transaction>2024/12/03 23:55:53.000.039,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h</Transaction>
+    <Transaction>2024/12/03 23:56:14.000.563,C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.h=C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.h</Transaction>
+    <Transaction>2024/12/03 23:56:39.000.441,=C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.cpp</Transaction>
+    <Transaction>2024/12/03 23:56:48.000.898,C:\Users\AntonioPC\Desktop\Nu te supara frate\File1.cpp=C:\Users\AntonioPC\Desktop\Nu te supara frate\Pozitie.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

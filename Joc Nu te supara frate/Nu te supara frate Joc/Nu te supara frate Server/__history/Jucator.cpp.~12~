@@ -1,0 +1,30 @@
+﻿#include "Jucator.h"
+#include "Zar.h"
+
+// Constructor
+Jucator::Jucator(TShape* pionShape, TColor culoareJucator)
+{
+    pion = pionShape;        // Referință la TShape
+    culoare = culoareJucator;  // Culoarea pionului
+}
+
+// Metoda care mută pionul
+void Jucator::muta(Zar& zar)
+{
+    int valoareZar = zar.getValoare();  // Obține valoarea zarului
+    int pozitieCurenta = pion->Tag;     // Obține poziția curentă a pionului
+
+    // Calculăm noua poziție
+    int nouaPozitie = pozitieCurenta + valoareZar;
+
+    // Verificăm dacă noua poziție este validă (între 1 și 41)
+    if (nouaPozitie <= 41) {
+        // Revenim culoarea veche la poziția curentă
+        pion->Brush->Color = clBtnFace;  // Culoare implicită pentru a semnala că e liberă
+
+        // Setăm noua poziție și schimbăm culoarea pionului pe noua poziție
+        pion->Tag = nouaPozitie;          // Actualizează poziția
+        pion->Brush->Color = culoare;     // Schimbă culoarea pionului pe noua poziție
+    }
+}
+

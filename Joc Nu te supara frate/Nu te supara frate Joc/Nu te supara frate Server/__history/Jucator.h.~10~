@@ -1,0 +1,21 @@
+﻿#ifndef JucatorH
+#define JucatorH
+
+#include <vcl.h>
+#include "Zar.h"  // Importăm clasa Zar
+
+class Jucator {
+private:
+    TShape *pion;  // Pionul, reprezentat de un TShape
+    TColor culoare;  // Culoarea pionului
+
+public:
+    // Constructor care inițializează pionul și culoarea
+    Jucator(TShape *pionShape, TColor culoarePion);
+
+    // Funcția care mută pionul (schimbă culoarea formei TShape)
+    void muta(Zar& zar);
+};
+
+#endif
+
